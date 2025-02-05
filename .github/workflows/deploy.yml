@@ -23,23 +23,14 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
 
-      - name: ⚙️ Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v4
-        with:
-          cache: pnpm
-          cache-dependency-path: "package.json"
-          node-version: 20
+      - name: ⚙️ Setup bun
+        uses: oven-sh/setup-bun@v2
 
       - name: 📥 Install deps
-        run: pnpm install
+        run: bun install
 
       - name: 🔬 Lint
-        run: pnpm run lint
+        run: bun run lint
 
       - name: 🔎 Type check
-        run: pnpm run typecheck
+        run: bun run typecheck
