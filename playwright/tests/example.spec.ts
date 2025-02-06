@@ -8,11 +8,11 @@ test("has title", async ({ page }) => {
 });
 
 test("create a post", async ({ page }) => {
-  await page.goto("http://localhost:3000/");
+  await page.goto("https://cicd-phi-six.vercel.app/");
   await page.getByRole("textbox", { name: "Title" }).click();
-  await page.getByRole("textbox", { name: "Title" }).fill("Hola que hace");
+  await page.getByRole("textbox", { name: "Title" }).fill("Frumen");
   await page.getByRole("button", { name: "Submit" }).click();
-  await page.getByText("Your most recent post: Hola").click();
+  await page.getByText("Your most recent post: Frumen").click();
 });
 
 test("get started link", async ({ page }) => {
