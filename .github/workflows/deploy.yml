@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 env:
-  DATABASE_URL: postgresql://test:test1@localhost:5432/test
+  POSTGRES_URL: postgresql://test:test1@localhost:5432/test
 
 jobs:
   lint:
